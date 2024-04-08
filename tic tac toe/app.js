@@ -3,17 +3,17 @@ let btn = document.querySelector("button");
 let para = document.querySelector("p");
 let outerbox =document.querySelector(".outerBox");
 
-let turn = "x";
+let turn = "X";
 let game = true;
 // let k = 0 ;
 
 const chanceTurn = () => {
 
-    if (turn === 'x') {
-        turn = 'o';
+    if (turn === 'X') {
+        turn = 'O';
     }
     else {
-        turn = 'x';
+        turn = 'X';
     }
 }
 
@@ -31,7 +31,7 @@ function winner(){
             (text[e[0]].innerText !== '')
         ) {
             game = false ;
-            if (turn === 'o') {
+            if (turn === 'O') {
                 para.innerText = (` X won & ${turn} loose`);
                 outerbox.classList.add("win");
 
@@ -50,16 +50,10 @@ function winner(){
 for (box of boxes) {
         let text = box.querySelector(".textBox");
         box.addEventListener("click", () => {
-            // console.log(text);
-            // console.log("clicked");
             if (text.innerText === "") {
                 text.innerText = turn;
                 chanceTurn();
                 para.innerText = `${turn} chance`;
-                // if(k === 1){
-                //     text.innerText = '';
-                //     console.log("A");
-                // }
                 winner();
             }
         })
@@ -70,7 +64,7 @@ btn.addEventListener("click" , () => {
         let text = box.querySelector(".textBox");
         text.innerText = "";
     }
-    turn = 'x';
+    turn = 'X';
     para.innerText = `${turn} chance` ;
     outerbox.classList.remove("win");
 
