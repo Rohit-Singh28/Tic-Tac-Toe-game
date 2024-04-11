@@ -100,3 +100,19 @@ ul li{
 .win{
     animation: winner 4s ease-in-out 0s 1 normal    ;
 }
+
+@media(max-width : 840px){
+    .outerBox{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+@media(max-width : 500px){
+    .innerBox{
+        margin-top: 3rem;
+        width: 20.5rem;
+        height: 20.5rem;
+        margin-right: 1rem;
+    }
+}
